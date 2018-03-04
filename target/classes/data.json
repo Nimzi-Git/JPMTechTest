@@ -1,0 +1,54 @@
+{
+  "trades": [
+    {
+      "Entity": "foo",
+      "TradeMetod": "B",
+      "AgreedFx": 0.50,
+      "Currency": "SGP",
+      "InstructionDate": "01 Jan 2016",
+      "SettlementDate": "02 Jan 2016",
+      "Units": 200,
+      "UnitPrice": 100.25
+    },
+    {
+      "Entity": "bar",
+      "TradeMetod": "S",
+      "AgreedFx": 0.22,
+      "Currency": "AED",
+      "InstructionDate": "05 Jan 2016",
+      "SettlementDate": "07 Jan 2016",
+      "Units": 450,
+      "UnitPrice": 150.5
+    },
+    {
+      "Entity": "JPM",
+      "TradeMetod": "B",
+      "AgreedFx": 0.21,
+      "Currency": "INR",
+      "InstructionDate": "08 Jan 2016",
+      "SettlementDate": "12 Jan 2016",
+      "Units": 4501,
+      "UnitPrice": 150.5
+    },
+    {
+      "Entity": "NIM",
+      "TradeMetod": "B",
+      "AgreedFx": 0.20,
+      "Currency": "INR",
+      "InstructionDate": "01 Jan 2016",
+      "SettlementDate": "01 Jan 2016",
+      "Units": 4500,
+      "UnitPrice": 150.5
+    },
+    {
+      "Entity": "TIM",
+      "TradeMetod": "B",
+      "AgreedFx": 0.20,
+      "Currency": "INR",
+      "InstructionDate": "01 Jan 2016",
+      "SettlementDate": "01 Jan 2016",
+      "Units": 40,
+      "UnitPrice": 150.5
+    }
+  ]
+}
