@@ -16,16 +16,16 @@ public class TradeTest {
     public void testTrade() throws IOException, ParseException {
         List<Trade> trades = (List<Trade>) readTradeFile.loadFiles(tradeFileName);
 
-        String entityName = "";
-        String tradedMethod = "";
-        double  fxRate =0.00;
-        String currency = "";
-        String instructionDate = "";
-        String  settlementDate="";
-        String finalSettlDate="";
-        long  tradeUnits=0;
-        double unitPrice=0.00;
-        double tradeAmount = 0.00;
+        String entityName;
+        String tradedMethod;
+        double  fxRate;
+        String currency ;
+        String instructionDate;
+        String  settlementDate;
+        String finalSettlDate;
+        long  tradeUnits;
+        double unitPrice;
+        double tradeAmount;
         Trade trade = trades.get(0);
             trade.setFinalSettlDate("08 Jan 2016");
             trade.setTradeAmount(12345.45);
@@ -61,16 +61,16 @@ public class TradeTest {
 //                "SettlementDate": "02 Jan 2016",
 //                "Units": 200,
 //                "UnitPrice": 100.25
-        assertEquals(entityName, "foo");
-        assertEquals(tradedMethod,"B");
-        assertEquals(fxRate,0.50,0.00);
-        assertEquals(currency,"SGP");
-        assertEquals(instructionDate,"01 Jan 2016");
-        assertEquals(settlementDate,"02 Jan 2016");
-        assertEquals(finalSettlDate,"08 Jan 2016");
-        assertEquals(tradeUnits,200);
-        assertEquals(unitPrice,100.25, 0.00);
-        assertEquals(tradeAmount,12345.45,0.00);
+        assertEquals("foo",entityName);
+        assertEquals("B", tradedMethod);
+        assertEquals(0.50,fxRate,0.00);
+        assertEquals("SGP",currency);
+        assertEquals("01 Jan 2016",instructionDate);
+        assertEquals("02 Jan 2016",settlementDate);
+        assertEquals("08 Jan 2016",finalSettlDate);
+        assertEquals(200,tradeUnits);
+        assertEquals(100.25,unitPrice, 0.00);
+        assertEquals(12345.45,tradeAmount,0.00);
         assertEquals(stringVal, refString);
 
 

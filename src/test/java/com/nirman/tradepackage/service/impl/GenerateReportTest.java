@@ -51,14 +51,13 @@ public class GenerateReportTest {
 
 
         generateReportObj.generateReport(trade);
-        System.out.println("OUTGOING TRADES"+generateReportObj.getOutgoingTrades().size());
-        System.out.println("INCOMING TRADES"+generateReportObj.getIncommingTrades().size());
-        assertEquals(calculateFinalSettlmetDate.getNewSettlementDate().toString(),"2016-01-04");
-        assertEquals(calculateFinalSettlmetDate.getTradable(),false);
-        assertEquals(String.format("%.2f",trade.getTradeAmount()), "10025.00");
-        assertEquals(generateReportObj.getOutgoingTrades().size(),1);
-        assertEquals(generateReportObj.getIncommingTrades().size(),0);
-        assertEquals((sb.toString()).equals(result.toString()),true);
+
+        assertEquals("2016-01-04",calculateFinalSettlmetDate.getNewSettlementDate().toString());
+        assertEquals(false,calculateFinalSettlmetDate.getTradable());
+        assertEquals("10025.00",String.format("%.2f",trade.getTradeAmount()));
+        assertEquals(1,generateReportObj.getOutgoingTrades().size());
+        assertEquals(0,generateReportObj.getIncommingTrades().size());
+        assertEquals(true,(sb.toString()).equals(result.toString()));
 
 
 
