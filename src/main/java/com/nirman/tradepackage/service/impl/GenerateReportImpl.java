@@ -27,23 +27,24 @@ public class GenerateReportImpl implements GenerateReport {
         for (Trade trade : trades) {
             //Generating trade data
             generateReport(trade);
-
-            //Write the Complete Report
-            StringBuilder completeReport =  generateFullTradeReport(trades, "FULL");
-            System.out.println(completeReport);
-
-            //Print Report of Incoming Trades ranked by the trade amount for dates
-            incommingTrades.sort(Comparator.comparing(Trade::getFinalSettlDate).thenComparing(Trade::getTradeAmount).reversed());
-            StringBuilder inCommingReport =  generateFullTradeReport(incommingTrades, "RANKED ENTITIES BASED ON INCOMING");
-            System.out.println(inCommingReport);
-
-
-            //Print Report of Outgoing Trades ranked by the trade amount for dates
-            outgoingTrades.sort(Comparator.comparing(Trade::getFinalSettlDate).thenComparing(Trade::getTradeAmount).reversed());
-            StringBuilder outCommingReport =  generateFullTradeReport(outgoingTrades, "RANKED ENTITIES BASED ON OUTGOING");
-            System.out.println(outCommingReport);
-
         }
+
+
+        //Pring full Report
+        printReport(trades, "FULL");
+
+        //Print Report of Incoming Trades ranked by the trade amount for dates
+        printReport(incommingTrades, "RANKED ENTITIES BASED ON INCOMING");
+
+
+        //Print Report of Outgoing Trades ranked by the trade amount for dates
+        printReport(outgoingTrades, "RANKED ENTITIES BASED ON OUTGOING");
+    }
+
+    private void printReport(List<Trade> trades, String messages) {
+        trades.sort(Comparator.comparing(Trade::getFinalSettlDate).thenComparing(Trade::getTradeAmount).reversed());
+        StringBuilder inCommingReport = generateFullTradeReport(trades, messages);
+        System.out.println(inCommingReport);
     }
 
 
@@ -104,7 +105,7 @@ public class GenerateReportImpl implements GenerateReport {
     }
 
     //Logic for calculating the trading amount
-    private static void calculateTradeAmount(Trade trade){
+    private void calculateTradeAmount(Trade trade){
         Double tradeAmount = (trade.getUnitPrice()*trade.getTradeUnits()*trade.getFxRate());
         trade.setTradeAmount(tradeAmount);
     }
